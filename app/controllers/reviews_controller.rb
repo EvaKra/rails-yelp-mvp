@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     # find the restaurant that we want to add the review to
     @review = Review.new(review_params)
-    # create new review with review_params
+    # create new review using strong params
     @review.restaurant = @restaurant
     # link the review to a restaurant, connect the foreign keys
     if @review.save
